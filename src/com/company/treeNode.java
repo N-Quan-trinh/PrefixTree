@@ -52,6 +52,19 @@ public class treeNode {
         String output = "("+this.curr+childString+")";
         return output;
     }
+    public boolean exist(String word){
+        //each node will check for its child whether or not it matches with the current character or not.
+        //separate word into temp, which contains the first character
+        String temp = word.substring(1);
+        //cast an integer as index, using that index perform recursion
+        int index = (int) word.charAt(0);
+        //checks if the character exist or not and whether it is the last char.
+        if(charList.contains(word.charAt(0)) && word.length() > 1){
+            return  childrens[index - 97].exist(temp);
+        }
+        //if not, we r pretty sure this is the last character, so checks whether the last character exist in the list and if that children has an affix of true
+        else return charList.contains(word.charAt(0)) && this.childrens[index - 97].affix;
+    }
 
 }
 

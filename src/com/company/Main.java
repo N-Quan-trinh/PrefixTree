@@ -6,6 +6,8 @@ public class Main {
         treeList dictionary = new treeList();
         dictionary.add("butter");
         dictionary.add("butt");
-        System.out.println(dictionary.to_string());
+        dictionary.add("aromatic");
+        dictionary.add("air");
+        System.out.println(dictionary.exist("aromatic"));
     }
 }

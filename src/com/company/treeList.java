@@ -16,4 +16,13 @@ public class treeList {
     public String to_string(){
         return root.to_string();
     }
-}
+
+    public boolean exist(String word){
+        if(word.length() == 0){
+            return false;
+        }else{
+            return root.exist(word);
+        }
+        }
+    }
+
